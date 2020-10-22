@@ -53,3 +53,21 @@ def test_compose_enter_order():
         "Exited B",
         "Exited A",
     ]
+
+
+def test_compose_with_none():
+    """
+    Any `None` values encountered in the compose list are treated
+    as impotent
+
+    """
+    log = []
+    mgr1 = logging_manager("A", log)
+
+    with compose([mgr1, None]):
+        pass
+
+    assert log == [
+        "Entered A",
+        "Exited A",
+    ]

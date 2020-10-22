@@ -1,15 +1,16 @@
 from contextlib import contextmanager, ExitStack
-from typing import List, ContextManager
+from typing import List, ContextManager, Optional
 
 @contextmanager
-def compose(managers: List[ContextManager]):
+def compose(managers: List[Optional[ContextManager]]):
     """
     Enter each context manager in the list `managers`, in order,
     and exit them in order
     """
     with ExitStack() as stack:
         for manager in managers:
-            stack.enter_context(manager)
+            if manager:
+                stack.enter_context(manager)
         yield
 
 

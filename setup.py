@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="context-compose",
-    version="0.0.1",
+    version="0.0.2",
     author="Jack Riches",
     author_email="jackriches@gmail.com",
     description="Compose context managers from a sequence",
