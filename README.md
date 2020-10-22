@@ -1,6 +1,6 @@
 # context_compose
 
-### Python utility library to compose context managers
+### Python utility library to compose context managers (3.6+)
 
 ## Motivation
 
